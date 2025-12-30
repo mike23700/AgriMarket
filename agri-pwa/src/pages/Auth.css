@@ -1,0 +1,116 @@
+/* Styles pour le conteneur d'authentification */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/* Carte d'authentification */
+.auth-card {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+}
+
+/* En-tête avec logo */
+.auth-header {
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+}
+
+.auth-logo {
+  width: 100px;
+  height: auto;
+  margin: 10px 0;
+}
+
+/* Conteneur des onglets */
+.auth-tabs-container {
+  position: sticky;
+  background-color: white;
+  z-index: 10;
+  border-bottom: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+.auth-tabs {
+  display: flex;
+  width: 100%;
+}
+
+.auth-tab-button {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.auth-tab-button.active {
+  color: #2e7d32;
+}
+
+.auth-tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #2e7d32;
+}
+
+/* Contenu du formulaire */
+.auth-tab-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Styles pour tablettes et plus grands écrans */
+@media (min-width: 768px) {
+  .auth-card {
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: auto;
+    max-height: 90vh;
+  }
+  
+  .auth-tab-button {
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Styles pour les très petits écrans */
+@media (max-width: 360px) {
+  .auth-tab-button {
+    padding: 14px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .auth-logo {
+    width: 120px;
+  }
+}

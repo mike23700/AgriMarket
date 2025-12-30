@@ -1,0 +1,131 @@
+/* Styles communs aux formulaires d'authentification */
+
+.form-container {
+    position: relative;
+    width: 100%;         
+    background-color: #FFFFFF;
+    border-radius: 0; 
+    box-shadow: none;     
+    display: flex;
+    flex-direction: column;
+}
+
+.form-content {
+    padding: 10px;
+}
+
+.form-title {
+    color: #2e7d32;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid #D1D1D1;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.form-input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+.form-button {
+    width: 100%;
+    padding: 16px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #1b5e20;
+}
+
+.form-error {
+    color: #d32f2f;
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #757575;
+    font-size: 14px;
+}
+
+.form-link {
+    color: #2e7d32;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+.role-box {
+    margin-bottom: 25px;
+}
+
+.role-label {
+    font-size: 14px;
+    color: #616161;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.role-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid #D1D1D1;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    outline: none;
+}
+
+.role-select:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+.alert-message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.alert-error {
+    background-color: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #ffcdd2;
+}

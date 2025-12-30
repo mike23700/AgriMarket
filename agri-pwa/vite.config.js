@@ -14,7 +14,7 @@ export default defineConfig({
         name: 'Agri Market',
         short_name: 'AgriMarket',
         description: 'Plateforme de vente directe et traçabilité agricole',
-        theme_color: '#2e7d32',
+        theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/',
