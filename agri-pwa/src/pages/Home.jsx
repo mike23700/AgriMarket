@@ -1,6 +1,19 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faMapMarkerAlt, 
+  faComment, 
+  faBell, 
+  faHome, 
+  faClipboardList, 
+  faCamera, 
+  faShoppingCart, 
+  faUser,
+  faStar
+} from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import './Home.css';
 
 const Home = () => {
@@ -20,11 +33,14 @@ const Home = () => {
                 <div className="header-top">
                     <div className="user-info">
                         <h1>{user?.username || 'Chinnaya'}</h1>
-                        <p><i className="location-icon">📍</i> Karur, Tamilnadu</p>
+                        <p><FontAwesomeIcon icon={faMapMarkerAlt} className="icon" /> Karur, Tamilnadu</p>
                     </div>
                     <div className="header-icons">
-                        <span className="icon">💬</span>
-                        <span className="icon notification">🔔<span className="badge">2</span></span>
+                        <span className="icon"><FontAwesomeIcon icon={faComment} /></span>
+                        <span className="icon notification">
+                            <FontAwesomeIcon icon={faBell} />
+                            <span className="badge">2</span>
+                        </span>
                     </div>
                 </div>
             </header>
@@ -33,7 +49,9 @@ const Home = () => {
                 {/* Boutons d'action rapides */}
                 <div className="action-buttons">
                     <button className="btn-primary" onClick={() => navigate('/sell')}>Sell My Product</button>
-                    <button className="btn-secondary" onClick={() => navigate('/shop')}>Shop 🛒</button>
+                    <button className="btn-secondary" onClick={() => navigate('/shop')}>
+                        Shop <FontAwesomeIcon icon={faShoppingCart} />
+                    </button>
                 </div>
 
                 {/* Section Market Price */}
@@ -48,7 +66,9 @@ const Home = () => {
                             <div className="card-info">
                                 <h3>{item.name}</h3>
                                 <p>{item.family}</p>
-                                <span className="rating">⭐ {item.rating}</span>
+                                <span className="rating">
+                                    <FontAwesomeIcon icon={faStar} className="star-icon" /> {item.rating}
+                                </span>
                             </div>
                             <div className="card-price">
                                 Rs {item.price}/{item.unit}
@@ -60,11 +80,21 @@ const Home = () => {
 
             {/* Bottom Navigation Bar */}
             <nav className="bottom-nav">
-                <div className="nav-item active">🏠</div>
-                <div className="nav-item">📋</div>
-                <div className="nav-floating-btn">📷</div>
-                <div className="nav-item">🛒</div>
-                <div className="nav-item" onClick={logout}>👤</div>
+                <div className="nav-item active">
+                    <FontAwesomeIcon icon={faHome} />
+                </div>
+                <div className="nav-item">
+                    <FontAwesomeIcon icon={faClipboardList} />
+                </div>
+                <div className="nav-floating-btn">
+                    <FontAwesomeIcon icon={faCamera} className="plus-icon" />
+                </div>
+                <div className="nav-item">
+                    <FontAwesomeIcon icon={faShoppingCart} />
+                </div>
+                <div className="nav-item" onClick={logout}>
+                    <FontAwesomeIcon icon={faUser} />
+                </div>
             </nav>
         </div>
     );
