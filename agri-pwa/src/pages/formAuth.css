@@ -1,62 +1,77 @@
-/* Styles communs aux formulaires d'authentification */
+/* Variables pour les formulaires */
+:root {
+    --form-bg: #FFFFFF;
+    --form-padding: 10px;
+    --form-radius: 15px;
+    --input-bg: #f9f9f9;
+    --input-border: #D1D1D1;
+    --input-focus: rgba(46, 125, 50, 0.2);
+    --text-primary: #2e7d32;
+    --text-light: #FFFFFF;
+}
 
+/* Conteneur du formulaire */
 .form-container {
-    position: relative;
-    width: 100%;         
-    background-color: #FFFFFF;
-    border-radius: 0; 
-    box-shadow: none;     
+    width: 100%;
+    background: var(--form-bg);
     display: flex;
     flex-direction: column;
 }
 
 .form-content {
-    padding: 10px;
+    padding: var(--form-padding);
 }
 
+/* Titre du formulaire */
 .form-title {
-    color: #2e7d32;
-    font-size: 24px;
+    color: var(--text-primary);
+    font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 30px;
-    font-weight: bold;
+    margin: 0 0 1.875rem;
+    font-weight: 700;
 }
 
+/* Champs de formulaire */
 .form-input {
     width: 100%;
-    padding: 18px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    border: 1px solid #D1D1D1;
-    font-size: 14px;
-    outline: none;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
+    padding: 1.125rem;
+    margin-bottom: 1.25rem;
+    border-radius: var(--form-radius);
+    border: 1px solid var(--input-border);
+    font-size: 0.875rem;
+    background: var(--input-bg);
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .form-input:focus {
-    border-color: #2e7d32;
-    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 2px var(--input-focus);
+    outline: none;
 }
 
+/* Boutons du formulaire */
 .form-button {
     width: 100%;
-    padding: 16px;
-    background-color: #2e7d32;
-    color: white;
+    padding: 1rem;
+    background: var(--text-primary);
+    color: var(--text-light);
     border: none;
-    border-radius: 15px;
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: var(--form-radius);
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.form-button:active {
+    transform: translateY(1px);
 }
 
 .form-button:hover {
-    background-color: #1b5e20;
+    background-color: var(--primary-hover, #1b5e20);
 }
 
+/* Messages d'erreur */
 .form-error {
     color: #d32f2f;
     text-align: center;

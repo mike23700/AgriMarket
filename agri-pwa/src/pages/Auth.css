@@ -1,3 +1,14 @@
+/* Variables spécifiques à la page d'authentification */
+:root {
+  --auth-bg: #f5f5f5;
+  --auth-card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --tab-active: #2e7d32;
+  --tab-inactive: #757575;
+  --logo-width: 100px;
+  --logo-margin: 1px 130px;
+}
+
 /* Styles pour le conteneur d'authentification */
 * {
   box-sizing: border-box;
@@ -10,38 +21,38 @@
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: var(--auth-bg);
 }
 
 /* Carte d'authentification */
 .auth-card {
-  width: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--auth-card-bg);
   position: relative;
 }
 
 /* En-tête avec logo */
 .auth-header {
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
-  background-color: white;
+  background-color: var(--auth-card-bg);
 }
 
 .auth-logo {
-  width: 100px;
+  width: var(--logo-width);
   height: auto;
-  margin: 1px 130px;
+  margin: var(--logo-margin);
 }
 
 /* Conteneur des onglets */
 .auth-tabs-container {
   position: sticky;
-  background-color: white;
+  top: 0;
+  background-color: var(--auth-card-bg);
   z-index: 10;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
 }
 
