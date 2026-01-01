@@ -1,13 +1,17 @@
 /* Styles de base pour le conteneur principal */
 .home-mobile-container {
-    width: 393px;
-    height: 852px;
+    width: 100%;
+    max-width: 393px; /* Largeur maximale */
+    height: 100vh; /* Hauteur de la vue */
     background: #fdfdfd;
     position: relative;
-    overflow-y: auto;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    overflow-y: auto; /* Permet le défilement vertical */
     display: flex;
     flex-direction: column;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 0 auto; /* Centre le conteneur */
+    -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
 }
 
 /* Styles pour les icônes */
@@ -56,10 +60,12 @@
 .home-content {
     background: #ffffff;
     flex: 1;
-    padding-top: 180px; /* Pour laisser de l'espace pour le header fixe */
-    padding-bottom: 80px; /* Pour laisser de l'espace pour la barre de navigation en bas */
-    overflow-y: auto; /* Permettre le défilement du contenu si nécessaire */
-    margin-top: 0;
+    padding: 180px 20px 80px; /* Espace pour le header et la navigation */
+    overflow-y: auto; /* Permettre le défilement vertical */
+    overflow-x: hidden; /* Empêcher le défilement horizontal */
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
 }
 
 /* Styles pour l'en-tête */
