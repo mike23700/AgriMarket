@@ -119,7 +119,10 @@ const Home = () => {
 
         {/* Section Prix du marché */}
         <section className="market-section">
-          <h2>Market Price</h2>
+          <div className="market-section-header">
+            <h2>Market Price</h2>
+            <button className="view-all-btn">View All</button>
+          </div>
           <div className="market-grid">
             {MARKET_PRICES.map(item => (
               <PriceCard key={item.id} item={item} />
