@@ -74,7 +74,6 @@ const Home = () => {
 
   return (
     <div className="home-mobile-container">
-      {/* En-tête */}
       <header className="home-header">
         <div className="header-top">
           <div className="user-info">
@@ -99,7 +98,6 @@ const Home = () => {
       </header>
 
       <main className="home-content">
-        {/* Boutons d'action rapides */}
         <div className="action-buttons">
           <button 
             className="btn-primary" 
@@ -117,7 +115,6 @@ const Home = () => {
           </button>
         </div>
 
-        {/* Section Prix du marché */}
         <section className="market-section">
           <div className="market-section-header">
             <h2>Market Price</h2>
@@ -131,7 +128,6 @@ const Home = () => {
         </section>
       </main>
 
-      {/* Barre de navigation en bas */}
 <div className="nav-container">
   <nav className="bottom-nav">
     {NAV_ITEMS.map((item, index) => {

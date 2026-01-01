@@ -30,7 +30,6 @@ const Auth = () => {
   const [activeTab, setActiveTab] = useState(TABS.LOGIN);
   const navigate = useNavigate();
 
-  // Mettre à jour l'onglet actif quand l'URL change
   useEffect(() => {
     const tab = searchParams.get('tab');
     if (Object.values(TABS).includes(tab)) {
@@ -41,7 +40,6 @@ const Auth = () => {
     }
   }, [searchParams, setSearchParams]);
 
-  // Mémoriser la fonction de changement d'onglet
   const handleTabChange = useCallback((tab) => {
     if (Object.values(TABS).includes(tab)) {
       setActiveTab(tab);
@@ -49,7 +47,6 @@ const Auth = () => {
     }
   }, [setSearchParams]);
 
-  // Rendu du contenu en fonction de l'onglet actif
   const renderTabContent = () => {
     switch (activeTab) {
       case TABS.LOGIN:

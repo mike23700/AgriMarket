@@ -24,7 +24,6 @@
     flex-direction: column;
 }
 
-/* En-tête fixe */
 .home-header {
     background: var(--header-bg);
     color: var(--text-light);
@@ -58,7 +57,6 @@
     background: var(--background);
 }
 
-/* Styles des icônes */
 .icon {
     color: var(--text-light);
     display: inline-flex;
@@ -84,7 +82,6 @@
     background: transparent !important;
 }
 
-/* Style spécifique pour les icônes de l'en-tête */
 .header-icons .icon-btn {
     color: white;
     background: transparent !important;
@@ -115,11 +112,10 @@
     font-weight: bold;
 }
 
-/* Boutons d'icônes d'en-tête */
 .icon-btn {
     background: none;
     border: none;
-    color: white; /* Couleur blanche pour les icônes */
+    color: white; 
     font-size: 1.2rem;
     cursor: pointer;
     padding: 8px;
@@ -127,11 +123,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent !important; /* Suppression de l'arrière-plan */
-    box-shadow: none !important; /* Suppression des ombres */
+    background: transparent; 
+    box-shadow: none; 
 }
 
-/* Informations utilisateur */
 .user-info {
     max-width: 60%;
 }
@@ -152,7 +147,6 @@
     line-height: 1.2;
 }
 
-/* Boutons d'action */
 .action-buttons {
     padding: var(--content-padding);
     display: flex;
@@ -169,7 +163,6 @@
     color: #ffffff;
 }
 
-/* Boutons secondaires */
 .btn-secondary {
     background: white;
     color: var(--primary-color);
@@ -185,7 +178,6 @@
     background-color: #f5f5f5;
 }
 
-/* Section Market Price */
 .market-section {
     margin: 30px 0;
     padding: 0 10px;
@@ -249,7 +241,7 @@
     transform: translateX(-50%);
     width: 100%;
     max-width: 393px;
-    height: 100px; /* Hauteur augmentée à 100px */
+    height: 100px; 
     z-index: 1000;
 }
 
@@ -306,7 +298,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Styles pour les éléments de navigation */
 .nav-item {
     display: flex;
     flex-direction: column;
@@ -327,7 +318,6 @@
     color: #004d00;
 }
 
-/* Style pour la notification */
 .notification {
     position: relative;
 }

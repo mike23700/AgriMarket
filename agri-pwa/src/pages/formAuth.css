@@ -10,7 +10,6 @@
     --text-light: #FFFFFF;
 }
 
-/* Conteneur du formulaire */
 .form-container {
     width: 100%;
     background: var(--form-bg);
@@ -22,7 +21,6 @@
     padding: var(--form-padding);
 }
 
-/* Titre du formulaire */
 .form-title {
     color: var(--text-primary);
     font-size: 1.5rem;
@@ -31,7 +29,6 @@
     font-weight: 700;
 }
 
-/* Champs de formulaire */
 .form-input {
     width: 100%;
     padding: 1.125rem;
@@ -49,7 +46,6 @@
     outline: none;
 }
 
-/* Boutons du formulaire */
 .form-button {
     width: 100%;
     padding: 1rem;
@@ -71,7 +67,6 @@
     background-color: var(--primary-hover, #1b5e20);
 }
 
-/* Messages d'erreur */
 .form-error {
     color: #d32f2f;
     text-align: center;

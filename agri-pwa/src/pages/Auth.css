@@ -24,7 +24,6 @@
   background-color: var(--auth-bg);
 }
 
-/* Carte d'authentification */
 .auth-card {
   flex: 1;
   display: flex;
@@ -33,7 +32,6 @@
   position: relative;
 }
 
-/* En-tête avec logo */
 .auth-header {
   padding: 1.25rem;
   text-align: center;
@@ -46,7 +44,6 @@
   margin: var(--logo-margin);
 }
 
-/* Conteneur des onglets */
 .auth-tabs-container {
   position: sticky;
   top: 0;
@@ -88,7 +85,6 @@
   background-color: #2e7d32;
 }
 
-/* Contenu du formulaire */
 .auth-tab-content {
   flex: 1;
   overflow-y: auto;
@@ -96,7 +92,6 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* Styles pour tablettes et plus grands écrans */
 @media (min-width: 768px) {
   .auth-card {
     max-width: 500px;
@@ -114,7 +109,6 @@
   }
 }
 
-/* Styles pour les très petits écrans */
 @media (max-width: 360px) {
   .auth-tab-button {
     padding: 14px 12px;

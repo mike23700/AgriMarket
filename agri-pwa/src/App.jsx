@@ -47,11 +47,9 @@ const LandingPage = React.memo(() => {
   );
 });
 
-// Composant principal avec le routeur
 const App = () => {
   const { user } = useAuth();
 
-  // Mémoriser le rendu des routes pour éviter les recalculs inutiles
   const routes = useMemo(() => [
     {
       path: ROUTES.ROOT,
