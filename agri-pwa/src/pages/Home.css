@@ -11,6 +11,13 @@
 }
 
 /* Styles pour les icônes */
+.welcome-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+    line-height: 1.2;
+}
+
 .icon {
     font-size: 1.2rem;
     margin-right: 8px;
@@ -71,6 +78,84 @@
     z-index: 1000;
     box-sizing: border-box;
     margin: 0 auto;
+}
+
+.header-top {
+    display: flex;
+    align-items: flex-start;  /* Alignement en haut */
+    padding: 10px 20px 15px;  /* Moins d'espace en haut, plus en bas */
+    min-height: 50px;  /* Hauteur réduite */
+    position: relative;
+}
+
+.header-icons {
+    display: flex;
+    align-items: flex-start;  /* Alignement en haut */
+    justify-content: flex-end;
+    flex: 1;
+    padding-left: 10px;
+    padding-top: 5px;  /* Légère marge en haut */
+}
+
+.icon-group {
+    display: flex;
+    gap: 2px;  /* Réduit à 2px d'espace */
+    align-items: center;
+}
+
+.header-icons .icon {
+    font-size: 1.2rem;  /* Réduit à 1.2rem */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;  /* Réduit à 24px */
+    height: 24px;  /* Réduit à 24px */
+    position: relative;
+    margin: 0 1px;  /* Marge minimale */
+}
+
+.notification .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.user-info h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    line-height: 1.2;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Alignement en haut */
+    height: auto;
+    flex-shrink: 0;
+    max-width: 60%;
+    margin-top: 5px;  /* Légère marge en haut */
 }
 
 .action-buttons {

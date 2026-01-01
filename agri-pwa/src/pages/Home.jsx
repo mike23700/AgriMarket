@@ -36,11 +36,13 @@ const Home = () => {
                         <p><FontAwesomeIcon icon={faMapMarkerAlt} className="icon" /> Karur, Tamilnadu</p>
                     </div>
                     <div className="header-icons">
-                        <span className="icon"><FontAwesomeIcon icon={faComment} /></span>
-                        <span className="icon notification">
-                            <FontAwesomeIcon icon={faBell} />
-                            <span className="badge">2</span>
-                        </span>
+                        <div className="icon-group">
+                            <span className="icon"><FontAwesomeIcon icon={faComment} /></span>
+                            <span className="icon notification">
+                                <FontAwesomeIcon icon={faBell} />
+                                <span className="badge">2</span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </header>
