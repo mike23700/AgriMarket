@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import authService from '../services/authService';
 import './formAuth.css';
 
@@ -7,6 +8,7 @@ const Login = () => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const { login: loginContext } = useAuth();
 
     const handleChange = (e) => {
         setCredentials({
@@ -19,10 +21,10 @@ const Login = () => {
         e.preventDefault();
         setError('');
         try {
-            const user = await authService.login(credentials);
-            if (user && user.username) {
-                alert("Connexion réussie ! Bienvenue " + user.username);
-                navigate('/');
+            const userData = await authService.login(credentials);
+            if (userData && userData.username) {
+                loginContext(userData); 
+                navigate('/home'); 
             }
         } catch (err) {
             setError(err);

@@ -1,11 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { useAuth } from './context/AuthContext';
 import Auth from './pages/Auth';
+import Home from './pages/Home';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 import logo from './assets/logo.png';
 
-// Composant pour la page d'accueil
-const Home = () => {
+// Composant pour la landing page
+const LandingPage = () => {
   const navigate = useNavigate();
   
   return (
@@ -33,12 +36,25 @@ const Home = () => {
 
 // Composant principal avec le routeur
 function App() {
+  const { user } = useAuth();
+
   return (
     <Router>
       <div className="app">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route 
+            path="/" 
+            element={user ? <Navigate to="/home" replace /> : <LandingPage />} 
+          />
           <Route path="/auth" element={<Auth />} />
+          <Route 
+            path="/home" 
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            } 
+          />
         </Routes>
       </div>
     </Router>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import authService from '../services/authService';
 import './formAuth.css';
 
@@ -13,6 +14,7 @@ const Register = () => {
     });
     const [status, setStatus] = useState({ type: '', message: '' });
     const navigate = useNavigate();
+    const { login: loginContext } = useAuth();
 
     const handleChange = (e) => {
         setFormData({
@@ -24,12 +26,14 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await authService.register(formData);
-            setStatus({
-                type: 'success',
-                message: 'Inscription réussie ! Vous pouvez maintenant vous connecter.'
-            });
-            setTimeout(() => navigate('/auth?tab=login'), 2000);
+            // Enregistrement de l'utilisateur
+            const userData = await authService.register(formData);
+            
+            // Connexion automatique après inscription
+            if (userData && userData.username) {
+                loginContext(userData); 
+                navigate('/home');
+            }
         } catch (error) {
             setStatus({
                 type: 'error',
