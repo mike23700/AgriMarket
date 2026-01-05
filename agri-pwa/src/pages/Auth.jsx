@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import logo from '../assets/logo.png';
-import './Auth.css';
+import '../styles/Auth.css';
 
 // Constantes pour les onglets
 const TABS = {

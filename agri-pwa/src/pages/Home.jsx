@@ -13,7 +13,7 @@ import {
   faUser,
   faStar as fasStar
 } from '@fortawesome/free-solid-svg-icons';
-import './Home.css';
+import '../styles/Home.css';
 
 // Données statiques
 const MARKET_PRICES = [
