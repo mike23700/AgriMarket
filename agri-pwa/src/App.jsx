@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'r
 import { useAuth } from './context/AuthContext';
 import Auth from './pages/Auth';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 import logo from './assets/logo.png';
@@ -11,6 +12,7 @@ import logo from './assets/logo.png';
 const ROUTES = {
   HOME: '/home',
   AUTH: '/auth',
+  PROFILE: '/profile',
   ROOT: '/'
 };
 
@@ -64,6 +66,14 @@ const App = () => {
       element: (
         <ProtectedRoute>
           <Home />
+        </ProtectedRoute>
+      )
+    },
+    {
+      path: ROUTES.PROFILE,
+      element: (
+        <ProtectedRoute>
+          <Profile />
         </ProtectedRoute>
       )
     },

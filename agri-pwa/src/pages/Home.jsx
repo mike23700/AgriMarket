@@ -14,17 +14,19 @@ import {
   faStar as fasStar
 } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Home.css';
+import bananaImg from '../assets/banana.webp';
+import mangoImg from '../assets/mango.webp';
 
 // Données statiques
 const MARKET_PRICES = [
   { 
     id: 1, 
-    name: 'Rice Seed', 
+    name: 'Banana', 
     family: 'Monstera family', 
     price: '55', 
     unit: 'Kg', 
     rating: '4.8', 
-    img: 'https://via.placeholder.com/80' 
+    img: bananaImg 
   },
   { 
     id: 2, 
@@ -33,7 +35,7 @@ const MARKET_PRICES = [
     price: '40', 
     unit: 'Kg', 
     rating: '4.8', 
-    img: 'https://via.placeholder.com/80' 
+    img: mangoImg
   },
 ];
 
@@ -69,7 +71,17 @@ const Home = () => {
 
   const handleNavClick = (label) => {
     // Gestion des clics sur les éléments de navigation
-    console.log(`Naviguer vers: ${label}`);
+    switch(label) {
+      case 'Profile':
+        navigate('/profile');
+        break;
+      case 'Home':
+        navigate('/home');
+        break;
+      // Ajouter d'autres cas de navigation ici si nécessaire
+      default:
+        console.log(`Naviguer vers: ${label}`);
+    }
   };
 
   return (
