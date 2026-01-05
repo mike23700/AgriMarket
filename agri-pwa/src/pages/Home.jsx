@@ -1,7 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CameraPreview from '../components/CameraPreview';
 import { 
   faMapMarkerAlt, 
   faComment, 
@@ -68,6 +70,7 @@ const PriceCard = ({ item }) => (
 const Home = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const [showCamera, setShowCamera] = useState(false);
 
   const handleNavClick = (label) => {
     // Gestion des clics sur les éléments de navigation
@@ -78,10 +81,23 @@ const Home = () => {
       case 'Home':
         navigate('/home');
         break;
-      // Ajouter d'autres cas de navigation ici si nécessaire
+      case 'Add':
+        setShowCamera(true);
+        break;
       default:
         console.log(`Naviguer vers: ${label}`);
     }
+  };
+
+  const handleCapture = (imageUrl) => {
+    console.log('Image capturée:', imageUrl);
+    setShowCamera(false);
+    // traitemnet de l'image que je vais faire ici
+    // Par exemple, l'afficher dans un formulaire ou l'envoyer à un serveur
+  };
+
+  const handleCloseCamera = () => {
+    setShowCamera(false);
   };
 
   return (
@@ -92,7 +108,7 @@ const Home = () => {
             <h1>{user?.username}</h1>
             <p>
               <FontAwesomeIcon icon={faMapMarkerAlt} className="icon" /> 
-              Yaoundé, Cameroon
+              Yaoundé, Cameroon 
             </p>
           </div>
           <div className="header-icons">
@@ -140,28 +156,39 @@ const Home = () => {
         </section>
       </main>
 
-<div className="nav-container">
-  <nav className="bottom-nav">
-    {NAV_ITEMS.map((item, index) => {
-      if (index === 2) {
-        return <div key="spacer" style={{ width: '60px' }}></div>;
-      }
+      <div className="nav-container">
+        <nav className="bottom-nav">
+          {NAV_ITEMS.map((item, index) => {
+            if (index === 2) {
+              return <div key="spacer" style={{ width: '60px' }}></div>;
+            }
+            
+            return (
+              <div 
+                key={item.id} 
+                className="nav-icon"
+                onClick={() => handleNavClick(item.label)}
+              >
+                <FontAwesomeIcon icon={item.icon} />
+              </div>
+            );
+          })}
+          <div 
+            className="nav-floating-btn" 
+            onClick={() => handleNavClick('Add')}
+            style={{ zIndex: showCamera ? 1001 : 'auto' }}
+          >
+            <FontAwesomeIcon icon={faCamera} />
+          </div>
+        </nav>
+      </div>
       
-      return (
-        <div 
-          key={item.id} 
-          className="nav-icon"
-          onClick={() => handleNavClick(item.label)}
-        >
-          <FontAwesomeIcon icon={item.icon} />
-        </div>
-      );
-    })}
-    <div className="nav-floating-btn" onClick={() => handleNavClick('Add')}>
-      <FontAwesomeIcon icon={faCamera} />
-    </div>
-  </nav>
-</div>
+      {showCamera && (
+        <CameraPreview 
+          onClose={handleCloseCamera}
+          onCapture={handleCapture}
+        />
+      )}
     </div>
   );
 };
